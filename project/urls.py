@@ -15,6 +15,7 @@ urlpatterns = [
     path("api-token-auth/", views.obtain_auth_token),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("auth/", include("djoser.urls")),
+    path("auth/social/", include("djoser.social.urls")),
     path("auth/", include("djoser.urls.jwt")),
     path("auth/users/activate/account/", ActivateUserEmail.as_view()),
     # the 'api-root' from django rest-frameworks default router
